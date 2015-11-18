@@ -1,0 +1,329 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=320,user-sclable=no,init-scale=1">
+	<style type="text/css">
+	/*base*/
+	*{margin: 0;padding: 0;}
+	h1,h2,h3,h4,h5,h6,ul,ol,dl,p{margin:0;padding:0;}
+	ul,ol{list-style: none;}
+	body{font: 12px/1em "Microsoft Yahei";background: #f4f4f4;color:#8d8d8d;}
+	a{color:#373737;text-decoration: none;}
+	img{border: none;}
+	em,strong,i{font-style: normal;}
+	header:after,
+	section:after,
+	nav:after{
+		content: '';
+		clear: both;
+		display: block;
+	}
+	header,.warp,section,footer,div{margin: 0 auto;}
+	a{text-decoration: none;}
+	/*头部header*/
+	.wrap header .slider{width: 320px;height: 150px;margin: 0 auto;overflow: hidden;position: relative;}
+	.wrap header .slider .slider_pic{height: 150px;width: 2222222px;}
+	.wrap header .slider .slider_pic li{float: left;width: 320px;height: 150px;}
+	.wrap header .slider .slider_pic li img{width: 320px;height: 150px;}
+	.wrap header .slider .slider_title{position: absolute;left: 0;bottom: 0;}
+	.wrap header .slider .slider_title li{float: left;width: 40px;height: 3px;background: rgba(0,0,0,.5)}
+	.wrap header .slider .slider_title li.active{background: #b20000;}
+	.wrap header .log_search{width: 320px;height: 99px;padding: 20px 0 17px 0;margin: 0 auto;}
+	.wrap header .log_search h1{width: 144px;height: 21px;margin: 0 auto;margin-bottom: 17px;}
+	.wrap header .log_search h1 img{width: 144px;height: 21px;}
+	.wrap header .log_search .search_text{width: 293px;height: 38px;margin: 0 auto;}
+	.wrap header .log_search input[type="text"]{width: 249px;height: 12px;float: left;border-radius: 2px 0 0 2px;border: 1px solid #dcdddd;border-right: none;padding: 12px 0 12px 8px;font-size: 12px;text-align: 12px;}
+	.wrap header .log_search input[type="submit"]{width: 35px;height: 38px;border:none;background: url(images/search.png) no-repeat;text-indent: -999999px;float: left;outline-width: 0;}
+	.wrap header nav{width: 327px;margin-left: -3px;margin:0 auto;}
+	.wrap header nav a{float: left;width: 78px;height: 80px;text-align: center;}
+	.wrap header nav a img{margin-bottom: 14px;height: 31px;}
+	.wrap header nav a span{display: block;}
+	.wrap header nav .spliter{float: left;width: 1px;height: 32px;background: #d7d7d7;margin-top: 3px;}
+	.wrap .take_look{width: 300px;height: 85px;background: #fff;padding: 4px 0 0 3px;position: relative;margin-bottom: 10px;}
+	.wrap .take_look h2{color: #333;font-weight: normal;font-size: 12px;margin-bottom: 9px;}
+	.wrap .take_look h2 small{color: #a1a1a1;margin-left: 6px;font-size: 12px;}
+	.wrap .take_look .img{width: 66px;height: 60px;float: left;border-right: 1px solid #d1d1d1;}
+	.wrap .take_look img{height: 60px;}
+	.wrap .take_look span{float: left;margin-left: 4px;height: 20px;line-height: 20px;}
+	.wrap .take_look span strong{color: #ff0000;margin: 0 4px 0 5px;}
+	.wrap .take_look span del{text-decoration: none;}
+	.wrap .take_look a{float: right;background: url(images/take_look_right.png) no-repeat right center;padding-right: 13px;position: absolute;right: 12px;top: 50%;margin-top: -6px;color: #8d8d8d;}
+	.wrap .hot{width: 301px;height: 278px;border-top: 1px solid #dedede;border-left: 1px solid #dedede;margin-bottom: 30px;}
+	.wrap .hot a{float: left;width: 144px;height: 82px;padding: 10px 0 0 5px;background: #fff;border-right: 1px solid #dedede;border-bottom: 1px solid #dedede;}
+	.wrap .hot a img{height: 66px;width: 52px;float: left;}
+	.wrap .hot a .hot_text{float: left;margin-left: 7px;margin-top: 10px;}
+	.wrap .hot a .hot_text h3{height: 18px;line-height: 18px;}
+	.wrap .hot a .hot_text p{height: 18px;line-height: 18px;}
+	.wrap .item{margin-top: 25px;}
+	.wrap .item .pic{width: 300px;height: 150px;}
+	.wrap .item .pic img{width: 180px;height: 150px;border-right: 1px solid #dedede;float: left;}
+	.wrap .item .pic .small_pic{width: 111px;height: 54px;background: url(images/item_img_sm_1.jpg) no-repeat;padding: 20px 0 0 8px;float: left;border-bottom: 1px solid #dedede;}
+	.wrap .item .pic .down{border-bottom-color: #fff;}
+	.wrap .item .label{width: 300px;margin-top: 10px;}
+	.wrap .item .label a{float: left;padding: 9px 12px;background: #fff;margin: 0 4px 5px 0;box-shadow: 1px 1px 2px rgba(0,0,0,.2)}
+	footer{width: 320px;margin-top: 15px;text-align: center;}
+	footer a img{width: 300px;height: 75px;margin-bottom:4px;}
+	footer .user_operate{border-top: 1px solid #e3e3e3;border-bottom: 1px solid #e3e3e3;height: 40px;}
+	footer .user_operate .user_box{width: 300px;margin: 0 auto;}
+	footer .user_operate .user_box .user_load{float: left;margin-right: 12px;color: #004477;margin-top: 15px;}
+	footer .user_operate .user_box .user_reg{float: left;color: #004477;margin-top: 15px;}
+	footer .user_operate .user_box .to_top{float: right;margin: 4px 0 ;width: 72px;height: 32px;background: url(images/footer_btn_to_top.png) no-repeat;text-indent: -999999px;}
+	footer .tm_copyright{height: 57px;text-align: center;padding-top: 18px;}
+	footer .tm_copyright p{margin-top: 14px;}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<header>	
+			<div class="slider">
+				<ul class="slider_pic">
+					<li><img src="images/slider-1.jpg" alt=""></li>
+					<li><img src="images/slider-2.jpg" alt=""></li>
+					<li><img src="images/slider-3.jpg" alt=""></li>
+					<li><img src="images/slider-4.jpg" alt=""></li>
+					<li><img src="images/slider-5.jpg" alt=""></li>
+					<li><img src="images/slider-6.jpg" alt=""></li>
+					<li><img src="images/slider-7.jpg" alt=""></li>
+					<li><img src="images/slider-8.jpg" alt=""></li>
+				</ul>
+				<ol class="slider_title">
+					<li class="active"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ol>
+			</div>
+			<div class="log_search">
+				<h1><img src="images/logo.png"></h1>
+				<div class="search_text">
+					<input type="text" placeholder="搜索..">
+					<input type="submit" value="搜索">
+				</div>
+			</div>
+			<nav>
+				<a href="javascript:;">
+					<img src="images/icon1.png">
+					<span>商品类目</span>
+				</a>
+				<span class="spliter"></span>
+				<a href="javascript:;">
+					<img src="images/icon2.png">
+					<span>商品类目</span>
+				</a>
+				<span class="spliter"></span>
+				<a href="javascript:;">
+					<img src="images/icon3.png">
+					<span>商品类目</span>
+				</a>
+				<span class="spliter"></span>
+				<a href="javascript:;">
+					<img src="images/icon4.png">
+					<span>商品类目</span>
+				</a>
+				<a href="javascript:;">
+					<img src="images/icon5.png">
+					<span>商品类目</span>
+				</a>
+				<span class="spliter"></span>
+				<a href="javascript:;">
+					<img src="images/icon6.png">
+					<span>商品类目</span>
+				</a>
+				<span class="spliter"></span>
+				<a href="javascript:;">
+					<img src="images/icon7.png">
+					<span>商品类目</span>
+				</a>
+				<span class="spliter"></span>
+				<a href="javascript:;">
+					<img src="images/icon8.png">
+					<span>商品类目</span>
+				</a>
+			</nav>
+		</header>
+		<section class="take_look">
+			<h2>瞄一眼<small>限时闪购</small></h2>
+			<div class="img">
+				<img src="images/take_look_img.jpg">
+			</div>
+			<span>
+				小碎花雪纺7分连体裤<br>
+				剩余<time>01:02:05</time><br>
+				疯抢价<strong>￥69</strong><del>原价：￥198</del>
+			</span>
+			<a href="javascript:;">更多</a>
+		</section>
+		<section class="hot">
+			<a href="javascript:;">
+				<img src="images/hot-1.jpg" alt="">
+				<div class="hot_text">
+					<h3>喵鲜生</h3>
+					<p>进口食材<br>全部包邮</p>
+				</div>
+			</a>
+			<a href="javascript:;">
+				<img src="images/hot-2.jpg" alt="">
+				<div class="hot_text">
+					<h3>1秒变女神</h3>
+					<p>天猫女装<br>大牌上新</p>
+				</div>
+			</a>
+			<a href="javascript:;">
+				<img src="images/hot-3.gif" alt="">
+				<div class="hot_text">
+					<h3>一周新发现</h3>
+					<p>被女神扑倒</p>
+				</div>
+			</a>
+			<a href="javascript:;">
+				<img src="images/hot-4.png" alt="">
+				<div class="hot_text">
+					<h3>天猫电器城</h3>
+					<p>每日更新<br>无限独享价</p>
+				</div>
+			</a>
+			<a href="javascript:;">
+				<img src="images/hot-5.jpg" alt="">
+				<div class="hot_text">
+					<h3>品牌街</h3>
+					<p>发现。品牌<br>汇聚国际大牌</p>
+				</div>
+			</a>
+			<a href="javascript:;">
+				<img src="images/hot-6.jpg" alt="">
+				<div class="hot_text">
+					<h3>周边游</h3>
+					<p>最IN周边游，<br>5折白菜价</p>
+				</div>
+			</a>
+		</section>
+		<section class="item">
+			<div class="pic">
+				<img src="images/item_img_big_1.jpg" alt="">
+				<span class="small_pic">衬衫推荐</span>
+				<span class="small_pic down">热卖夹克</span>
+			</div>
+			<div class="label">
+				<a href="javascript:;">长袖T恤</a>
+				<a href="javascript:;">长袖衬衫</a>
+				<a href="javascript:;">春夹克</a>
+				<a href="javascript:;">牛仔裤</a>
+				<a href="javascript:;">休闲裤</a>
+				<a href="javascript:;">针织衫</a>
+				<a href="javascript:;">风衣</a>
+			</div>
+		</section>
+		<section class="item">
+			<div class="pic">
+				<img src="images/item_img_big_2.jpg" alt="">
+				<span class="small_pic">春夏新品</span>
+				<span class="small_pic down">文艺清新</span>
+			</div>
+			<div class="label">
+				<a href="javascript:;">连衣裙</a>
+				<a href="javascript:;">衬衫</a>
+				<a href="javascript:;">T恤</a>
+				<a href="javascript:;">针织衫</a>
+				<a href="javascript:;">卫衣</a>
+				<a href="javascript:;">短外套</a>
+				<a href="javascript:;">雪纺衫</a>
+				<a href="javascript:;">休闲裤</a>
+				<a href="javascript:;">牛仔裤</a>
+			</div>
+		</section>
+		<section class="item">
+			<div class="pic">
+				<img src="images/item_img_big_1.jpg" alt="">
+				<span class="small_pic">春夏新品</span>
+				<span class="small_pic down">文艺清新</span>
+			</div>
+			<div class="label">
+				<a href="javascript:;">连衣裙</a>
+				<a href="javascript:;">衬衫</a>
+				<a href="javascript:;">T恤</a>
+				<a href="javascript:;">针织衫</a>
+				<a href="javascript:;">卫衣</a>
+				<a href="javascript:;">短外套</a>
+				<a href="javascript:;">雪纺衫</a>
+				<a href="javascript:;">休闲裤</a>
+				<a href="javascript:;">牛仔裤</a>
+			</div>
+		</section>
+		<section class="item">
+			<div class="pic">
+				<img src="images/item_img_big_1.jpg" alt="">
+				<span class="small_pic">春夏新品</span>
+				<span class="small_pic down">文艺清新</span>
+			</div>
+			<div class="label">
+				<a href="javascript:;">连衣裙</a>
+				<a href="javascript:;">衬衫</a>
+				<a href="javascript:;">T恤</a>
+				<a href="javascript:;">针织衫</a>
+				<a href="javascript:;">卫衣</a>
+				<a href="javascript:;">短外套</a>
+				<a href="javascript:;">雪纺衫</a>
+				<a href="javascript:;">休闲裤</a>
+				<a href="javascript:;">牛仔裤</a>
+			</div>
+		</section>
+		<section class="item">
+			<div class="pic">
+				<img src="images/item_img_big_1.jpg" alt="">
+				<span class="small_pic">春夏新品</span>
+				<span class="small_pic down">文艺清新</span>
+			</div>
+			<div class="label">
+				<a href="javascript:;">连衣裙</a>
+				<a href="javascript:;">衬衫</a>
+				<a href="javascript:;">T恤</a>
+				<a href="javascript:;">针织衫</a>
+				<a href="javascript:;">卫衣</a>
+				<a href="javascript:;">短外套</a>
+				<a href="javascript:;">雪纺衫</a>
+				<a href="javascript:;">休闲裤</a>
+				<a href="javascript:;">牛仔裤</a>
+			</div>
+		</section>
+		<section class="item">
+			<div class="pic">
+				<img src="images/item_img_big_1.jpg" alt="">
+				<span class="small_pic">春夏新品</span>
+				<span class="small_pic down">文艺清新</span>
+			</div>
+			<div class="label">
+				<a href="javascript:;">连衣裙</a>
+				<a href="javascript:;">衬衫</a>
+				<a href="javascript:;">T恤</a>
+				<a href="javascript:;">针织衫</a>
+				<a href="javascript:;">卫衣</a>
+				<a href="javascript:;">短外套</a>
+				<a href="javascript:;">雪纺衫</a>
+				<a href="javascript:;">休闲裤</a>
+				<a href="javascript:;">牛仔裤</a>
+			</div>
+		</section>
+		<footer>
+			<a href="javascript:;"><img src="images/footer_img.jpg" alt=""></a>
+			<div class="user_operate">
+				<div class="user_box">
+					<a href="javascript:;" class="user_load">注册</a>
+					<a href="javascript:;" class="user_reg">登录</a>
+					<a href="#" class="to_top">返回顶部</a>
+				</div>
+			</div>
+			<div class="tm_copyright">
+				<span>电脑版</span>
+				<p>Copyright©2014浙B2-20080224</p>
+			</div>
+		</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+*{ margin:0; padding:0; list-style:none; font-family: "微软雅黑"}
+input{outline:none; border:none;}
+html{overflow-y:scroll;}
+#div1 {width:430px; margin:50px auto;}
+#ipt1 {width:418px; height:14px; font-size:14px; padding:9px 5px; border:#999 solid 1px; box-shadow:inset 0 0 6px #CCC;}
+#ul1 {width:428px; border:1px solid #817F82; display:none; margin-top:-1px;box-shadow:inset 0 0 6px #CCC;}
+#ul1 li {font-size:14px; line-height: 30px; list-style:none;}
+#ul1 li a{ display: block; text-decoration: none; color:#000; padding-left: 1em;}
+#ul1 li a:hover { background-color: #ccc; line-height: 30px;}
+</style>
+
+
+<script>
+function aaa(json){
+	
+	//下拉框
+	var oUl=document.getElementById('ul1');
+	var oUlInnerHTML='';
+	
+	if(json.s.length==0){
+		oUl.style.display='none';	
+	}else{
+		oUl.innerHTML='';
+		for(var i=0;i<json.s.length;i++){
+			//oUlInnerHTML+='<li>'+json.s[i]+'</li>';	
+			oUlInnerHTML+='<li><a href="https://www.baidu.com/s?wd='+json.s[i]+'">'+json.s[i]+'</a></li>';	
+		}
+		oUl.innerHTML=oUlInnerHTML;
+		oUl.style.display='block';	
+	}
+}
+</script>
+<script>
+window.onload=function(){
+	var oIpt=document.getElementById('ipt1');
+	oIpt.onkeyup=function(){
+		//创建一个script标签，丢到head里
+		var oScript=document.createElement('script');
+		oScript.src='https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd='+this.value+'&cb=aaa';
+		document.getElementsByTagName('head')[0].appendChild(oScript);
+	};	
+};
+</script>
+
+</head>
+
+<body>
+<div id="div1">
+    <input type="text" id="ipt1">
+    <ul id="ul1">
+        <!--<li>asdfasdfsdf</li>
+        <li>asdfasdfsdf</li>
+        <li>asdfasdfsdf</li>
+        <li>asdfasdfsdf</li>
+        <li>asdfasdfsdf</li>-->
+    </ul>
+</div>
+</body>
+</html>
